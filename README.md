@@ -16,3 +16,10 @@ This is currently in prototyping stage just to see what kind of extra logic we'l
 * Run `node server.js`
 * Open browser and navigate to `localhost:8082/scrape`
 
+## Important Links
+
+* The Cary - http://www.townofcary.org/Departments/Parks__Recreation___Cultural_Resources/Facilities/Cultural_Arts_Centers/thecary.htm
+* Showtimes - http://www.townofcary.org/Departments/Parks__Recreation___Cultural_Resources/Facilities/Cultural_Arts_Centers/thecary/eventsandtickets/calendar.htm?
+* OnStage@TheCary - http://www.townofcary.org/Departments/Parks__Recreation___Cultural_Resources/Facilities/Cultural_Arts_Centers/thecary/onstageatthecary.htm
+* Music@TheCary - http://www.townofcary.org/Departments/Parks__Recreation___Cultural_Resources/Facilities/Cultural_Arts_Centers/thecary/musicatthecary.htm
+* Films@TheCary - http://www.townofcary.org/Departments/Parks__Recreation___Cultural_Resources/Facilities/Cultural_Arts_Centers/thecary/filmsatthecary.htm
