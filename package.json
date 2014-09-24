@@ -10,6 +10,7 @@
     "cheerio": "latest"
   },
   "devDependencies": {
-    "moment": "^2.8.3"
+    "moment": "^2.8.3",
+    "mongoose": "^3.8.16"
   }
 }

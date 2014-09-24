@@ -23,6 +23,11 @@ app.get('/scrape', function(req, res)
       var listing = {scraped:[]};
       var cur_mom = moment();
 
+      //get today's date
+      listing.scrape_date = cur_mom.format();
+      //create today's file name
+      target_filename = "thecaryscrape_" + cur_mom.format("MMDDYYYY") + ".json";
+
       //The table doesn't have any usefull attributes to help select it.
       //Luckily, the CMS seems to have *some* structure that we can use to our advantage
       //The screentimes seem to always be the only table within the main-content div.
@@ -50,7 +55,22 @@ app.get('/scrape', function(req, res)
               {
                 if (cell[i].trim() != "")
                 {
-                  row_data.push( cell[i].trim() );
+                  var actual_cell = cell[i].trim();
+                  var cell_date = moment(actual_cell);
+
+                  //check for valid date
+                  if ( cell_date.isValid() === true )
+                  {
+                    //Moment gives a default year, if less than current year
+                    // assume the correct year is the current year
+                    if ( cell_date.year() < cur_mom.year() )
+                    {
+                      cell_date.year( cur_mom.year() )
+                    }
+                    row_data.push( cell_date.format() );
+                  }
+
+                  row_data.push( actual_cell );
                 }
               }
             }
@@ -59,10 +79,6 @@ app.get('/scrape', function(req, res)
           listing.scraped.push(row_data);
         });
       });
-      //get today's date
-      listing.scrape_date = cur_mom.format();
-      //create today's file name
-      target_filename = "thecaryscrape_" + cur_mom.format("MMDDYYYY") + ".json";
       //convert the object to string for file storage
       listing_string = JSON.stringify(listing, null, 4);
       //store file
