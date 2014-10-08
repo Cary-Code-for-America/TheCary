@@ -4,6 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var moment  = require('moment');
 var app     = express();
+var util    = require('gulp-util');
 
 app.get('/scrape', function(req, res)
 {
@@ -90,6 +91,7 @@ app.get('/scrape', function(req, res)
 })
 
 //port to listen on
-app.listen('8082')
+app.listen('8082');
+util.log(util.colors.cyan("Server running on 8082."));
 
 exports = module.exports = app;
